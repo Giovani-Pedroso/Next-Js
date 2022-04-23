@@ -1,0 +1,12 @@
+{
+  "articles": [
+      { "id": 1, "title": "json-server", "author": "typicode" , "category":"web"},
+      { "id": 2, "title": "Kivy-Md", "author": "typicode" , "category":"python"},
+      { "id": 3, "title": "Arduino", "author": "typicode" , "category":"embedded"},
+      { "id": 4, "title": "Black-Pill", "author": "typicode", "category":"embedded"}
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}

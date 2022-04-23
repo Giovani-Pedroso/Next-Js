@@ -1,0 +1,102 @@
+#+Title:json-server
+
+*  1 - Installation
+
+Json server is a librerie to creat fake rest Api this is usefull for testing first if you does not have installed the lib install glabaly using this
+command
+
+#+begin_src shell
+npm install -g json-server
+#+end_src
+
+*  2 - Usege
+
+First you need create a data base to do that create a json file, there is an exemple bellow
+
+#+begin_src js
+  {
+    "articles": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+      { "id": 2, "title": "json-server", "author": "typicode" }
+      { "id": 3, "title": "json-server", "author": "typicode" }
+      { "id": 4, "title": "ccccccccccc", "author": "typicode",
+          "category":{
+              "embedded":"arduino"
+          }}
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }
+#+end_src
+
+Then run the command
+
+#+begin_src shell
+json-server --watch path-of-the-file.json
+#+end_src
+
+** 2 - 1 - Getting the data
+
+To recive the data you must access the site:
+
+#+begin_src
+http://localhost:THE-NUMBER-THAT-YOU-CONFIG/THE-CATEGORY
+#+end_src
+
+An exemple:
+
+#+begin_src 
+http://localhost:3000/article
+#+end_src
+
+** 2 - 2  - To filter the data
+
+To filter the data you must follow the sample:
+
+#+begin_src 
+http://localhost:3000/CATEGORY/?THE-KEY-TO-FILTER=THE-VALUE-THAT-YOU-WANT
+#+end_src
+
+Exemple:
+
+#+begin_src 
+http://localhost:3000/articles/?id=2
+#+end_src
+
+You can use more that one thing to filter
+
+#+begin_src 
+http://localhost:3000/articles/?id=2&?category.embedded=arduino
+#+end_src
+
+
+
+
+
+
+
+** 2- 3 - Sort
+
+Sort meaning rearenge the data in some like crecente order, alfabetic orter etc...
+
+to do that use the sample
+
+#+begin_src
+http://localhost:3000/CATEGORY/?_sort=VALUE
+#+end_src
+
+Exemple:
+
+#+begin_src 
+http://localhost:3000/articles/?_sort=id
+#+end_src
+
+the default is be crecente order to change that do like thath
+
+#+begin_src 
+http://localhost:3000/articles/?_sort=id&_order=desc
+#+end_src
+
+
