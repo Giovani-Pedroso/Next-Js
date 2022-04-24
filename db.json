@@ -1,4 +1,44 @@
 {
+  "events":[
+    {
+      "id":0,
+      "name":"Carnaval",
+      "category":"cultural",
+      "date":"23-abr"
+    },
+    {
+      "id":1,
+      "name":"Festa Junina",
+      "category":"cultural",
+      "date":"23-jun"
+    },
+    {
+      "id":2,
+      "name":"BGS",
+      "category":"tech",
+      "date":"23-out"
+    },
+    {
+      "id":3,
+      "name":"CCXP",
+      "category":"cultural",
+      "date":"23-nov"
+    },
+    {
+      "id":4,
+      "name":"Campus Party",
+      "category":"tech",
+      "date":"23-dez"
+    }
+
+  ],
+  "dashboard":{
+    "likes":344,
+    "comments":13,
+    "followers":10,
+    "following":1000
+
+  },
   "articles": [
       { "id": 1, "title": "json-server", "author": "typicode" , "category":"web"},
       { "id": 2, "title": "Kivy-Md", "author": "typicode" , "category":"python"},

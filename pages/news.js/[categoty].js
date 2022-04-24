@@ -1,7 +1,12 @@
-export default function News({articles}){
+//import { createPortal } from "react-dom/cjs/react-dom.production.min"
+//import { getServerSideProps } from "."
+
+export default function Category({articles,category}){
+
     return(
+
         <>
-            <h1>List of articles</h1>
+        <h1>{category}</h1>
             {
                 articles.map(article =>{
                     return(
@@ -15,24 +20,22 @@ export default function News({articles}){
             }
         </>
 
-    );
-
+    )
 }
 
+export async function getServerSideProps(context){
+    const {params} = context;
+    const {category} = params;
 
-//spacial function on next js to use the server side
-//render config, this function only run on the server side
-//this mean that this code won't be send to the user also means
-//that you can use nodejs code
-export async function getServerSideProps(){    
-    const response = await fetch('http://localhost:4444/articles/');
+    const response = await fetch(`http://localhost:4444/articles?category=${category}`);
     const data = await response.json();
 
-    return{
+    return {
 
         props:{
-            articles: data
+            articles:data, 
+            category
         }
     }
-}
 
+}
